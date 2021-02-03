@@ -1,11 +1,12 @@
+import { ComponentType } from 'react'
+import { FlatList } from 'react-native'
 import Animated from 'react-native-reanimated'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import styled from 'styled-components/native'
+import { CoinInfo } from '../../@types/types'
 
-export const Container = styled.View`
+export const Container = styled(SafeAreaView)`
   flex: 1;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 `
 
 export const AnimatedBar = styled(Animated.View)`
@@ -15,7 +16,11 @@ export const AnimatedBar = styled(Animated.View)`
   margin: 30px;
   align-items: center;
 `
-export const Title = styled.Text`
-  color: whitesmoke;
-  font-weight: bold;
+
+export const CoinListOld = styled(FlatList as new () => FlatList<CoinInfo>)`
+  flex: 1;
 `
+
+export const CoinList = (styled.FlatList`
+  flex: 1;
+` as ComponentType) as new <T>() => FlatList<CoinInfo>

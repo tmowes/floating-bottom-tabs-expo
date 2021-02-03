@@ -2,7 +2,9 @@ import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
 import { StatusBar } from 'react-native'
 import styled, { css, ThemeProvider } from 'styled-components/native'
+import AppProvider from './hooks/AppProvider'
 import Routes from './routes'
+import * as C from './components'
 import * as themes from './styles/themes'
 
 const AppWrapper = styled.View`
@@ -14,18 +16,21 @@ const AppWrapper = styled.View`
 
 const AppSrc: React.FC = () => {
   return (
-    <ThemeProvider theme={themes.dark}>
-      <NavigationContainer>
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor="transparent"
-          translucent
-        />
-        <AppWrapper>
-          <Routes />
-        </AppWrapper>
-      </NavigationContainer>
-    </ThemeProvider>
+    <AppProvider>
+      <ThemeProvider theme={themes.dark}>
+        <NavigationContainer>
+          <StatusBar
+            barStyle="light-content"
+            backgroundColor="transparent"
+            translucent
+          />
+          <AppWrapper>
+            <Routes />
+          </AppWrapper>
+          <C.LoadingOverlay />
+        </NavigationContainer>
+      </ThemeProvider>
+    </AppProvider>
   )
 }
 
