@@ -27,7 +27,7 @@ const TabRoutes = () => {
     activeTabBackgrounds: colors.orange,
     activeColors: colors.foodWhiteIsh,
     whenActiveShow: TabElementDisplayOptions.ICON_ONLY,
-    tabBarBackground: colors.backgroundColor,
+    tabBarBackground: colors.transparent,
     shadow: true,
     whenInactiveShow: TabElementDisplayOptions.ICON_ONLY,
     tabButtonLayout: TabButtonLayout.VERTICAL,

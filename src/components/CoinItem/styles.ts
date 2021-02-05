@@ -27,8 +27,8 @@ export const Title = styled.Text`
   flex: 1;
   color: whitesmoke;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 18px;
 `
 
 export const Info = styled.View`
@@ -42,6 +42,8 @@ export const BottomInfo = styled.View`
   flex: 1;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 `
 
 export const IdView = styled.View`
@@ -58,13 +60,21 @@ export const IdView = styled.View`
 
 export const Id = styled.Text`
   color: whitesmoke;
-  font-size: 14px;
+  font-size: 12px;
 `
 
 export const Symbol = styled.Text`
   color: whitesmoke;
-  font-size: 14px;
+  font-size: 12px;
   margin-right: 4px;
+`
+
+export const SymbolView = styled.View`
+  flex-direction: row;
+`
+
+export const ChangeView = styled.View`
+  flex-direction: row;
 `
 
 export const DirectionIcon = styled(Entypo).attrs({
@@ -73,7 +83,7 @@ export const DirectionIcon = styled(Entypo).attrs({
 })<PositiveStyle>`
   ${({ isPositive }) => css`
     color: #f00;
-    margin-right: 4px;
+    margin-left: 4px;
     ${isPositive &&
     css`
       color: #0f0;
@@ -82,13 +92,12 @@ export const DirectionIcon = styled(Entypo).attrs({
   `}
 `
 export const Change = styled.Text`
-  font-size: 14px;
-  margin-right: 4px;
+  font-size: 12px;
   color: gainsboro;
 `
 
 export const Column = styled.View`
-  flex: 1;
+  flex: 0.6;
   align-items: flex-end;
   justify-content: space-around;
   margin-right: 8px;
@@ -97,8 +106,7 @@ export const Column = styled.View`
 export const Graph = styled.View``
 
 export const Price = styled.Text`
-  flex: 1;
   align-self: flex-end;
   color: whitesmoke;
-  font-weight: bold;
+  font-size: 14px;
 `
