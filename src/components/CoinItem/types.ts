@@ -1,6 +1,6 @@
 import { CoinInfo } from '../../@types/types'
 
-export type CoinItemProps = {
+export interface CoinItemProps {
   coinData: CoinInfo
 }
 

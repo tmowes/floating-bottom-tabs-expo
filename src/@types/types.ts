@@ -8,7 +8,8 @@ export interface CoinInfo {
   total_supply: number
   last_updated: Date
   quote: Quote
-  rank: number
+  cmc_rank: number
+  chartData: number[]
   noLazyLoad: boolean
 }
 

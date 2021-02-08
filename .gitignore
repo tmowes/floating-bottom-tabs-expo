@@ -37,6 +37,7 @@ npm-debug.log
 yarn-error.log
 
 coin.ts
+firebase-config.ts
 
 # BUCK
 buck-out/

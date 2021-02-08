@@ -29,6 +29,7 @@ const dark = {
     uberInput: '#E9E9E9',
     uberTag: '#13AF59',
     carouselBg: '#A5F1FA',
+    signal: '#3298EB',
     toasts: {
       info: {
         color: '#3172b7',

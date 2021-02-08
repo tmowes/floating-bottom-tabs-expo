@@ -5,10 +5,9 @@ import styled, { css } from 'styled-components/native'
 export const Container = styled.View`
   ${({ theme: { colors } }) => css`
     flex: 1;
-    background: ${colors.backgroundColor};
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    background: ${colors.backgroundColor};
   `}
 `
 
@@ -34,6 +33,10 @@ export const Button = styled(RectButton)`
 export const Title = styled.Text`
   ${({ theme: { colors } }) => css`
     color: ${colors.foodWhiteIsh};
-    font-weight: bold;
   `}
+`
+
+export const Img = styled.Image`
+  width: 64px;
+  height: 64px;
 `

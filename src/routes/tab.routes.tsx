@@ -16,10 +16,12 @@ const { Navigator, Screen } = AnimatedTabBarNavigator()
 
 const TabRoutes = () => {
   const { colors } = useTheme()
+
   const tabBarOptions = {
     activeTintColor: colors.foodWhiteIsh,
     inactiveTintColor: colors.grayHard,
   }
+
   const appearenceOptions: Partial<IAppearenceOptions> = {
     floating: true,
     dotSize: DotSize.SMALL,
@@ -27,13 +29,18 @@ const TabRoutes = () => {
     activeTabBackgrounds: colors.orange,
     activeColors: colors.foodWhiteIsh,
     whenActiveShow: TabElementDisplayOptions.ICON_ONLY,
-    tabBarBackground: colors.transparent,
+    tabBarBackground: colors.backgroundColor,
     shadow: true,
     whenInactiveShow: TabElementDisplayOptions.ICON_ONLY,
     tabButtonLayout: TabButtonLayout.VERTICAL,
   }
+
   return (
-    <Navigator appearence={appearenceOptions} tabBarOptions={tabBarOptions}>
+    <Navigator
+      appearence={appearenceOptions}
+      tabBarOptions={tabBarOptions}
+      initialRouteName="Chat"
+    >
       <Screen
         name="Home"
         component={P.Home}
@@ -67,6 +74,15 @@ const TabRoutes = () => {
         options={{
           tabBarIcon: ({ color }) => (
             <Feather name="user" size={20} color={color} />
+          ),
+        }}
+      />
+      <Screen
+        name="Chat"
+        component={P.Chat}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Feather name="message-circle" size={20} color={color} />
           ),
         }}
       />

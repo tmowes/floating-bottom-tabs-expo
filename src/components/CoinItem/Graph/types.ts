@@ -1,6 +1,7 @@
 export type GraphProps = {
   id: number
   isPositive: boolean
+  chartData: number[]
 }
 
 // export type ChartData = { [key: string]: { [key: string]: number[] } }

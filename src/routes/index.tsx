@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { View, ActivityIndicator } from 'react-native'
-
+import React, { useEffect, useState } from 'react'
+import { ActivityIndicator, View } from 'react-native'
 // import AppRoutes from './app.routes'
-import TabRoutes from './tab.routes'
+// import TabRoutes from './tab.routes'
+import ChatRoutes from './chat.routes'
 
 const Routes: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -22,7 +22,8 @@ const Routes: React.FC = () => {
   }
 
   // return <AppRoutes />
-  return <TabRoutes />
+  // return <TabRoutes />
+  return <ChatRoutes />
 }
 
 export default Routes

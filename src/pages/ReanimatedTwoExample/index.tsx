@@ -32,6 +32,7 @@ const ReanimatedTwoExample: React.FC = () => {
       <S.Button onPress={handleAnimation}>
         <S.Title>Toggle</S.Title>
       </S.Button>
+      <S.Img source={{ uri: 'https://github.com/tmowes.png' }} />
     </S.Container>
   )
 }
