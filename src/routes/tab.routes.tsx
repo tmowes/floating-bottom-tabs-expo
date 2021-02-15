@@ -7,7 +7,7 @@ import {
   TabButtonLayout,
   IAppearenceOptions,
 } from 'react-native-animated-nav-tab-bar'
-import { Feather } from '@expo/vector-icons'
+import { Feather, FontAwesome5 } from '@expo/vector-icons'
 import { useTheme } from 'styled-components'
 
 import * as P from '../pages'
@@ -39,50 +39,23 @@ const TabRoutes = () => {
     <Navigator
       appearence={appearenceOptions}
       tabBarOptions={tabBarOptions}
-      initialRouteName="Chat"
+      initialRouteName="Discover"
     >
       <Screen
         name="Home"
         component={P.Home}
         options={{
           tabBarIcon: ({ color }) => (
-            <Feather name="home" size={20} color={color} />
+            <FontAwesome5 name="chart-area" size={20} color={color} />
           ),
         }}
       />
       <Screen
-        name="Reanimated 2"
-        component={P.ReanimatedTwoExample}
+        name="Discover"
+        component={P.Discover}
         options={{
           tabBarIcon: ({ color }) => (
-            <Feather name="image" size={20} color={color} />
-          ),
-        }}
-      />
-      <Screen
-        name="Reanimated 3"
-        component={P.ReanimatedTwoExample}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Feather name="compass" size={20} color={color} />
-          ),
-        }}
-      />
-      <Screen
-        name="Reanimated 4"
-        component={P.ReanimatedTwoExample}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Feather name="user" size={20} color={color} />
-          ),
-        }}
-      />
-      <Screen
-        name="Chat"
-        component={P.Chat}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Feather name="message-circle" size={20} color={color} />
+            <FontAwesome5 name="compass" size={20} color={color} />
           ),
         }}
       />
@@ -90,3 +63,40 @@ const TabRoutes = () => {
   )
 }
 export default TabRoutes
+
+// <Screen
+// name="Reanimated 2"
+// component={P.ReanimatedTwoExample}
+// options={{
+//   tabBarIcon: ({ color }) => (
+//     <Feather name="image" size={20} color={color} />
+//   ),
+// }}
+// />
+// <Screen
+// name="Reanimated 3"
+// component={P.ReanimatedTwoExample}
+// options={{
+//   tabBarIcon: ({ color }) => (
+//     <Feather name="compass" size={20} color={color} />
+//   ),
+// }}
+// />
+// <Screen
+// name="Reanimated 4"
+// component={P.ReanimatedTwoExample}
+// options={{
+//   tabBarIcon: ({ color }) => (
+//     <Feather name="user" size={20} color={color} />
+//   ),
+// }}
+// />
+// <Screen
+// name="Chat"
+// component={P.Chat}
+// options={{
+//   tabBarIcon: ({ color }) => (
+//     <Feather name="message-circle" size={20} color={color} />
+//   ),
+// }}
+// />

@@ -3,7 +3,7 @@ import { FlatList } from 'react-native'
 import Animated from 'react-native-reanimated'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import styled from 'styled-components/native'
-import { CoinInfo } from '../../@types/types'
+import { CoinInfoData } from '../../@types/types'
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
@@ -17,10 +17,10 @@ export const AnimatedBar = styled(Animated.View)`
   align-items: center;
 `
 
-export const CoinListOld = styled(FlatList as new () => FlatList<CoinInfo>)`
+export const CoinListOld = styled(FlatList as new () => FlatList<CoinInfoData>)`
   flex: 1;
 `
 
 export const CoinList = (styled.FlatList`
   flex: 1;
-` as ComponentType) as new <T>() => FlatList<CoinInfo>
+` as ComponentType) as new <T>() => FlatList<CoinInfoData>

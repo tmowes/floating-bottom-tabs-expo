@@ -1,7 +1,7 @@
-import { CoinInfo } from '../../@types/types'
+import { CoinInfoData } from '../../@types/types'
 
 export interface CoinItemProps {
-  coinData: CoinInfo
+  coinData: CoinInfoData
 }
 
 export type PositiveStyle = {

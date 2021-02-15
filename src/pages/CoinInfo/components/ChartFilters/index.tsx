@@ -1,0 +1,27 @@
+import React from 'react'
+import { useTheme } from 'styled-components/native'
+import { filterOptions } from './data'
+import * as S from './styles'
+import { ChartFiltersProps } from './types'
+
+const ChartFilters = (props: ChartFiltersProps) => {
+  const { colors } = useTheme()
+  return (
+    <S.Container>
+      <S.FilterList>
+        {filterOptions.map(({ id, period, interval }) => (
+          <S.ButtonView key={id}>
+            <S.FilterButton
+              onPress={() => true}
+              rippleColor={`${colors.orange}40`}
+            >
+              <S.Text>{period}</S.Text>
+            </S.FilterButton>
+          </S.ButtonView>
+        ))}
+      </S.FilterList>
+    </S.Container>
+  )
+}
+
+export default ChartFilters

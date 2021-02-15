@@ -29,6 +29,8 @@ const dark = {
     uberInput: '#E9E9E9',
     uberTag: '#13AF59',
     carouselBg: '#A5F1FA',
+    positive: '#00ff00',
+    negative: '#ff0000',
     signal: '#3298EB',
     toasts: {
       info: {

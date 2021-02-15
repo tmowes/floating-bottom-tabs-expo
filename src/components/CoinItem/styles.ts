@@ -1,8 +1,9 @@
 import { Entypo } from '@expo/vector-icons'
+import { RectButton } from 'react-native-gesture-handler'
 import styled, { css } from 'styled-components/native'
 import { PositiveStyle } from './types'
 
-export const Container = styled.View`
+export const Container = styled(RectButton)`
   ${({ theme: { colors } }) => css`
     flex-direction: row;
     align-items: center;
@@ -79,14 +80,14 @@ export const ChangeView = styled.View`
 
 export const DirectionIcon = styled(Entypo).attrs({
   name: 'triangle-down',
-  size: 16,
+  size: 18,
 })<PositiveStyle>`
-  ${({ isPositive }) => css`
-    color: #f00;
-    margin-left: 4px;
+  ${({ isPositive, theme: { colors } }) => css`
+    color: ${colors.negative};
+    margin-right: 4px;
     ${isPositive &&
     css`
-      color: #0f0;
+      color: ${colors.positive};
       transform: rotate(180deg);
     `}
   `}

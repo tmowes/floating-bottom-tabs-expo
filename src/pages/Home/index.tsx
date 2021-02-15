@@ -1,13 +1,12 @@
-import axios from 'axios'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { ActivityIndicator } from 'react-native'
-import { CoinInfo } from '../../@types/types'
+import { CoinInfoData } from '../../@types/types'
 import * as C from '../../components'
 import { coin } from '../../services'
 import * as S from './styles'
 
 const Home: React.FC = () => {
-  const [renderData, setRenderData] = useState<CoinInfo[]>([])
+  const [renderData, setRenderData] = useState<CoinInfoData[]>([])
   const currentPage = useRef(1)
   const loadingRef = useRef(false)
 
@@ -24,7 +23,7 @@ const Home: React.FC = () => {
       loadingRef.current = true
       try {
         currentPage.current += 1
-        const { data } = await coin.get<CoinInfo[]>('/', {
+        const { data } = await coin.get<CoinInfoData[]>('/', {
           params: { page: currentPage.current },
         })
         setRenderData(previousState => [...previousState, ...data])
@@ -39,7 +38,7 @@ const Home: React.FC = () => {
   const getCoins = useCallback(async () => {
     currentPage.current = 1
     loadingRef.current = true
-    const { data } = await coin.get<CoinInfo[]>('/', {
+    const { data } = await coin.get<CoinInfoData[]>('/', {
       params: { page: currentPage.current },
     })
     setRenderData(data)

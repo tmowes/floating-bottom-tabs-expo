@@ -1,11 +1,18 @@
-import React, { useMemo } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import React, { useCallback, useMemo } from 'react'
+import { useTheme } from 'styled-components/native'
+import { useLoading } from '../../hooks'
+import { formatCurrency } from '../../utils'
 import Graph from './Graph'
 import * as S from './styles'
 import { CoinItemProps } from './types'
 
 const CoinItem = ({ coinData }: CoinItemProps) => {
-  const { id, cmc_rank, symbol, name, quote, chartData } = coinData
+  const { id, cmc_rank, symbol, name, quote, chartData, slug } = coinData
   const { price, volume_24h, percent_change_1h, percent_change_24h } = quote.USD
+  const { navigate } = useNavigation()
+  const { setLoading } = useLoading()
+  const { colors } = useTheme()
 
   const percentChange1h = useMemo(() => {
     return `${percent_change_1h.toFixed(2)}%`
@@ -15,16 +22,19 @@ const CoinItem = ({ coinData }: CoinItemProps) => {
     return `${Math.abs(percent_change_24h).toFixed(2)}%`
   }, [percent_change_24h])
 
-  const formattedPrice = useMemo(() => price.toFixed(2), [price])
-
-  const formattedVol = useMemo(() => volume_24h.toFixed(2), [volume_24h])
+  const formattedPrice = useMemo(() => formatCurrency(price), [price])
 
   const isPositive = useMemo(() => percent_change_24h >= 0, [
     percent_change_24h,
   ])
 
+  const navCoinInfo = useCallback(() => {
+    setLoading(true)
+    navigate('CoinInfo', { id, slug })
+  }, [id, navigate, setLoading, slug])
+
   return (
-    <S.Container>
+    <S.Container onPress={navCoinInfo} rippleColor={`${colors.orange}40`}>
       <S.Icon
         source={{
           uri: `https://s2.coinmarketcap.com/static/img/coins/32x32/${id}.png`,

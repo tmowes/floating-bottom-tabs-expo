@@ -1,0 +1,232 @@
+{
+  "id": 1975,
+  "name": "Chainlink",
+  "symbol": "LINK",
+  "slug": "chainlink",
+  "category": "token",
+  "description": "description",
+  "dateAdded": "2017-09-20T00:00:00.000Z",
+  "status": "active",
+  "notice": "",
+  "latestUpdateTime": "2021-02-14T12:02:08.000Z",
+  "watchCount": "283114",
+  "tags": [
+    {
+      "slug": "platform",
+      "name": "Platform",
+      "category": "PROPERTY"
+    },
+    {
+      "slug": "defi",
+      "name": "DeFi",
+      "category": "PROPERTY"
+    },
+    {
+      "slug": "oracles",
+      "name": "Oracles",
+      "category": "PROPERTY"
+    },
+    {
+      "slug": "smart-contracts",
+      "name": "Smart Contracts",
+      "category": "PROPERTY"
+    },
+    {
+      "slug": "substrate",
+      "name": "Substrate",
+      "category": "PROPERTY"
+    },
+    {
+      "slug": "polkadot",
+      "name": "Polkadot",
+      "category": "PLATFORM"
+    },
+    {
+      "slug": "dot-ecosystem",
+      "name": "DOT Ecosystem",
+      "category": "PROPERTY"
+    }
+  ],
+  "urls": {
+    "website": ["https://chain.link/", "https://smartcontract.com/"],
+    "technical_doc": ["https://link.smartcontract.com/whitepaper"],
+    "explorer": [
+      "https://etherscan.io/token/0x514910771af9ca656af840dff83e8264ecf986ca",
+      "https://ethplorer.io/address/0x514910771af9ca656af840dff83e8264ecf986ca",
+      "https://blockchair.com/ethereum/erc-20/token/0x514910771af9ca656af840dff83e8264ecf986ca",
+      "https://eth.tokenview.com/en/token/0x514910771af9ca656af840dff83e8264ecf986ca",
+      "https://bscscan.com/token/0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd"
+    ],
+    "source_code": ["https://github.com/smartcontractkit/chainlink"],
+    "message_board": [
+      "https://medium.com/chainlink",
+      "https://blog.chain.link/"
+    ],
+    "chat": [],
+    "announcement": [],
+    "reddit": ["https://reddit.com/r/chainlink"],
+    "twitter": ["https://twitter.com/chainlink"]
+  },
+  "volume": 5716196400.107869,
+  "volumeChangePercentage24h": 19.71413091,
+  "statistics": {
+    "price": 33.83611437545332,
+    "priceChangePercentage24h": 13.67246758,
+    "marketCap": 13771621903.418383,
+    "marketCapChangePercentage24h": 13.67246758,
+    "fullyDilutedMarketCap": 33836114375.45332,
+    "fullyDilutedMarketCapChangePercentage24h": 13.67246758,
+    "circulatingSupply": 407009556.4344444,
+    "totalSupply": 1000000000,
+    "maxSupply": 1000000000,
+    "marketCapDominance": 0.91,
+    "rank": 9,
+    "roi": 21521.34930122,
+    "low24h": 29.38595071,
+    "high24h": 35.58050291,
+    "low7d": 23.08579307,
+    "high7d": 35.58050291,
+    "low30d": 17.38453902,
+    "high30d": 35.58050291,
+    "low90d": 8.50915351,
+    "high90d": 35.58050291,
+    "low52w": 1.50686783,
+    "high52w": 35.58050291,
+    "lowAllTime": 0.12629735,
+    "highAllTime": 35.58050291,
+    "lowAllTimeChangePercentage": 26690.83,
+    "highAllTimeChangePercentage": -4.9,
+    "lowAllTimeTimestamp": "2017-09-23T16:04:28.000Z",
+    "highAllTimeTimestamp": "2021-02-14T03:28:08.000Z",
+    "lowYesterday": 29.29359857,
+    "highYesterday": 34.5368584,
+    "openYesterday": 30.64744164,
+    "closeYesterday": 34.10197805,
+    "priceChangePercentageYesterday": 11.27,
+    "volumeYesterday": 5124433886.62,
+    "status": ""
+  },
+  "platforms": [
+    {
+      "contractId": 1027,
+      "contractAddress": "0x514910771af9ca656af840dff83e8264ecf986ca",
+      "contractPlatform": "Ethereum"
+    },
+    {
+      "contractId": 1839,
+      "contractAddress": "0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd",
+      "contractPlatform": "Binance Smart Chain"
+    },
+    {
+      "contractId": 5426,
+      "contractAddress": "CWE8jPTUYhdCTZYWPTe1o5DFqfdjzWKc9WKz6rSjQUdG",
+      "contractPlatform": "Solana"
+    }
+  ],
+  "relatedCoins": [
+    {
+      "id": 7463,
+      "name": "RAMP",
+      "slug": "ramp",
+      "price": 0.38115558092451,
+      "priceChangePercentage24h": 18.55638809,
+      "priceChangePercentage7d": 78.50507345
+    },
+    {
+      "id": 6719,
+      "name": "The Graph",
+      "slug": "the-graph",
+      "price": 2.16228358613324,
+      "priceChangePercentage24h": -4.55532577,
+      "priceChangePercentage7d": 148.74333322
+    },
+    {
+      "id": 7226,
+      "name": "Injective Protocol",
+      "slug": "injective-protocol",
+      "price": 16.39625499917254,
+      "priceChangePercentage24h": 8.2900043,
+      "priceChangePercentage7d": 45.45592497
+    },
+    {
+      "id": 3077,
+      "name": "VeChain",
+      "slug": "vechain",
+      "price": 0.0523052661931,
+      "priceChangePercentage24h": 0.74177616,
+      "priceChangePercentage7d": 78.98082389
+    },
+    {
+      "id": 5026,
+      "name": "Orchid",
+      "slug": "orchid",
+      "price": 0.6180832702216,
+      "priceChangePercentage24h": 0.37641296,
+      "priceChangePercentage7d": 44.79562154
+    },
+    {
+      "id": 8175,
+      "name": "COVER Protocol",
+      "slug": "cover-protocol-new",
+      "price": 1210.1899088171037,
+      "priceChangePercentage24h": 21.46109828,
+      "priceChangePercentage7d": 101.55015814
+    },
+    {
+      "id": 5015,
+      "name": "HEX",
+      "slug": "hex",
+      "price": 0.01052997851496,
+      "priceChangePercentage24h": -15.38378275,
+      "priceChangePercentage7d": 5.67534476
+    },
+    {
+      "id": 1817,
+      "name": "Voyager Token",
+      "slug": "voyager-token",
+      "price": 3.70004731171429,
+      "priceChangePercentage24h": -2.51470905,
+      "priceChangePercentage7d": 63.01665555
+    },
+    {
+      "id": 8037,
+      "name": "Terra Virtua Kolect",
+      "slug": "terra-virtua-kolect",
+      "price": 0.2847537255196,
+      "priceChangePercentage24h": 41.96786638,
+      "priceChangePercentage7d": 123.20709858
+    },
+    {
+      "id": 1027,
+      "name": "Ethereum",
+      "slug": "ethereum",
+      "price": 1831.305681887702,
+      "priceChangePercentage24h": 1.8516357,
+      "priceChangePercentage7d": 11.87679398
+    }
+  ],
+  "relatedExchanges": [
+    { "id": 270, "name": "Binance", "slug": "binance" },
+    {
+      "id": 102,
+      "name": "Huobi Global",
+      "slug": "huobi-global"
+    },
+    {
+      "id": 528,
+      "name": "BiKi",
+      "slug": "biki"
+    },
+    {
+      "id": 478,
+      "name": "HBTC",
+      "slug": "hbtc"
+    },
+    {
+      "id": 294,
+      "name": "OKEx",
+      "slug": "okex"
+    }
+  ],
+  "selfReportedTags": []
+}

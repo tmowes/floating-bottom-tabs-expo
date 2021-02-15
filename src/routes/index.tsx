@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, View } from 'react-native'
+import DashRoutes from './dash.routes'
 // import AppRoutes from './app.routes'
-// import TabRoutes from './tab.routes'
-import ChatRoutes from './chat.routes'
+import TabRoutes from './tab.routes'
+// import ChatRoutes from './chat.routes'
 
 const Routes: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -23,7 +24,8 @@ const Routes: React.FC = () => {
 
   // return <AppRoutes />
   // return <TabRoutes />
-  return <ChatRoutes />
+  return <DashRoutes />
+  // return <ChatRoutes />
 }
 
 export default Routes

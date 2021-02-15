@@ -1,4 +1,4 @@
-export interface CoinInfo {
+export interface CoinInfoData {
   id: number
   name: string
   symbol: string
@@ -26,4 +26,104 @@ export interface Usd {
   percent_change_30d: number
   market_cap: number
   last_updated: Date
+}
+
+export interface CoinInfoShowData {
+  id: number
+  name: string
+  symbol: string
+  slug: string
+  category: string
+  description: string
+  dateAdded: Date
+  status: string
+  notice: string
+  latestUpdateTime: Date
+  watchCount: string
+  tags: Tag[]
+  urls: Urls
+  volume: number
+  volumeChangePercentage24h: number
+  statistics: Statistics
+  platforms: Platform[]
+  relatedCoins: RelatedCoin[]
+  relatedExchanges: RelatedExchange[]
+  selfReportedTags: any[]
+}
+
+export interface Platform {
+  contractId: number
+  contractAddress: string
+  contractPlatform: string
+}
+
+export interface RelatedCoin {
+  id: number
+  name: string
+  slug: string
+  price: number
+  priceChangePercentage24h: number
+  priceChangePercentage7d: number
+}
+
+export interface RelatedExchange {
+  id: number
+  name: string
+  slug: string
+}
+
+export interface Statistics {
+  price: number
+  priceChangePercentage24h: number
+  marketCap: number
+  marketCapChangePercentage24h: number
+  fullyDilutedMarketCap: number
+  fullyDilutedMarketCapChangePercentage24h: number
+  circulatingSupply: number
+  totalSupply: number
+  maxSupply: number
+  marketCapDominance: number
+  rank: number
+  roi: number
+  low24h: number
+  high24h: number
+  low7d: number
+  high7d: number
+  low30d: number
+  high30d: number
+  low90d: number
+  high90d: number
+  low52w: number
+  high52w: number
+  lowAllTime: number
+  highAllTime: number
+  lowAllTimeChangePercentage: number
+  highAllTimeChangePercentage: number
+  lowAllTimeTimestamp: Date
+  highAllTimeTimestamp: Date
+  lowYesterday: number
+  highYesterday: number
+  openYesterday: number
+  closeYesterday: number
+  priceChangePercentageYesterday: number
+  volumeYesterday: number
+  status: string
+}
+
+export interface Tag {
+  slug: string
+  name: string
+  category: string
+}
+
+export interface Urls {
+  website: string[]
+  technical_doc: string[]
+  explorer: string[]
+  source_code: string[]
+  message_board: string[]
+  chat: any[]
+  announcement: any[]
+  reddit: string[]
+  twitter: string[]
 }

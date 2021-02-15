@@ -1,4 +1,6 @@
 export { default as Home } from './Home'
+export { default as CoinInfo } from './CoinInfo'
+export { default as Discover } from './Discover'
 export { default as Chat } from './Chat'
 export { default as Login } from './Login'
 export { default as Register } from './Register'
