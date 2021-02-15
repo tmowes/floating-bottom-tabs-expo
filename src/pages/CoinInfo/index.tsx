@@ -5,6 +5,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { CoinInfoShowData } from '../../@types/types'
 import { useLoading } from '../../hooks'
 import { ChartFilters, Header, HeaderInfo } from './components'
+import { filterOptions } from './components/ChartFilters/data'
 import * as S from './styles'
 import { CoinInfoParams } from './types'
 
@@ -13,6 +14,7 @@ const CoinInfo = () => {
   const [infoShow, setInfoShow] = useState<CoinInfoShowData>(
     {} as CoinInfoShowData,
   )
+  const [activeFilter, setActiveFilter] = useState(filterOptions[1])
 
   const {
     params: { id, slug },
@@ -44,7 +46,10 @@ const CoinInfo = () => {
         priceChangePercentage24h={statistics?.priceChangePercentage24h}
         price={statistics?.price}
       />
-      <ChartFilters />
+      <ChartFilters
+        activeFilter={activeFilter}
+        setActiveFilter={setActiveFilter}
+      />
     </S.Container>
   )
 }

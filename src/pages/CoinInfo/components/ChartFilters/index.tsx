@@ -5,6 +5,7 @@ import * as S from './styles'
 import { ChartFiltersProps } from './types'
 
 const ChartFilters = (props: ChartFiltersProps) => {
+  const { activeFilter, setActiveFilter } = props
   const { colors } = useTheme()
   return (
     <S.Container>
@@ -12,7 +13,8 @@ const ChartFilters = (props: ChartFiltersProps) => {
         {filterOptions.map(({ id, period, interval }) => (
           <S.ButtonView key={id}>
             <S.FilterButton
-              onPress={() => true}
+              onPress={() => setActiveFilter({ id, period, interval })}
+              isActive={period === activeFilter.period}
               rippleColor={`${colors.orange}40`}
             >
               <S.Text>{period}</S.Text>

@@ -31,13 +31,16 @@ export const ButtonView = styled.View`
   `}
 `
 
-export const FilterButton = styled(RectButton).attrs({})`
-  ${({ theme: { colors } }) => css`
-    /* background: ${`${colors.orange}`}; */
+export const FilterButton = styled(RectButton)<{ isActive: boolean }>`
+  ${({ isActive, theme: { colors } }) => css`
     align-items: center;
     justify-content: center;
     padding: 4px 0;
     width: 100%;
+    ${isActive &&
+    css`
+      background: ${`${colors.orange}`};
+    `}
   `}
 `
 export const FilterList = styled.ScrollView.attrs({
