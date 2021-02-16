@@ -1,7 +1,7 @@
 export type HeaderInfoProps = {
   name: string
   symbol: string
-  priceChangePercentage24h?: number
+  priceChangePercentage: number
   price?: number
 }
 
