@@ -8,5 +8,4 @@ export const filterOptions = [
   { id: '7', period: '30d', interval: '2d' },
   { id: '8', period: '90d', interval: '7d' },
   { id: '9', period: '1y', interval: '30d' },
-  { id: '10', period: '5y', interval: '365d' },
 ]

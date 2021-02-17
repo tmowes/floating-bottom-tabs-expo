@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
+import { ActivityIndicator } from 'react-native'
 import { BarChart } from 'react-native-svg-charts'
 import { useTheme } from 'styled-components/native'
-import { formatCurrency } from '../../../../utils'
 import * as S from './styles'
 import { ChartVolumeContainerProps } from './types'
 
@@ -13,6 +13,7 @@ const ChartVolumeContainer = ({ charBarData }: ChartVolumeContainerProps) => {
     height: 100,
   })
   const contentInset = { top: 30, bottom: 30 }
+
   return (
     <S.Container
       onLayout={({ nativeEvent }) =>
@@ -23,7 +24,10 @@ const ChartVolumeContainer = ({ charBarData }: ChartVolumeContainerProps) => {
       }
     >
       {charBarData.length === 0 ? (
-        <S.Text>Loading chart...</S.Text>
+        <S.Frag>
+          <ActivityIndicator size={64} color={colors.orange} />
+          <S.Text>Carregando gráfico...</S.Text>
+        </S.Frag>
       ) : (
         <BarChart
           style={{ ...chartSize }}

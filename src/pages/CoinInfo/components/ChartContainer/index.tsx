@@ -1,5 +1,6 @@
 import { curveNatural } from 'd3-shape'
 import React, { useCallback, useMemo, useState } from 'react'
+import { ActivityIndicator } from 'react-native'
 import { AreaChart, Grid, YAxis } from 'react-native-svg-charts'
 import { useTheme } from 'styled-components/native'
 import { formatCurrency } from '../../../../utils'
@@ -28,21 +29,17 @@ const ChartContainer = ({ chartData }: ChartContainerProps) => {
       }
     >
       {chartData.length === 0 ? (
-        <S.Text>Loading chart...</S.Text>
+        <S.Frag>
+          <ActivityIndicator size={64} color={colors.orange} />
+          <S.Text>Carregando gráfico...</S.Text>
+        </S.Frag>
       ) : (
         <>
-          <YAxis
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              bottom: 0,
-              zIndex: 9999,
-            }}
+          <S.VerticalAxis
             data={chartData}
             contentInset={contentInset}
             svg={{
-              fill: 'white',
+              fill: colors.foodWhiteLight,
               fontSize: 12,
             }}
             numberOfTicks={8}

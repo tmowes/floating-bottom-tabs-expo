@@ -10,4 +10,11 @@ export const Container = styled.View`
   width: 94%;
   flex-direction: row;
 `
-export const Text = styled.Text``
+export const Text = styled.Text`
+  ${({ theme: { colors } }) => css`
+    color: ${colors.error};
+    font-size: 20px;
+  `}
+`
+
+export const Frag = styled.View``
