@@ -12,16 +12,15 @@ const firebaseConfig = {
   appId: '1:720228195388:web:d1a40422a4a458a5a77739',
 }
 
-firebase.default.initializeApp(firebaseConfig)
 let app
 
-if (firebase.app.length === 0) {
-  app = firebase.initializeApp(firebaseConfig)
+if (firebase.apps.length === 0) {
+  app = firebase.default.initializeApp(firebaseConfig)
 } else {
-  app = firebase.app()
+  app = firebase.default.app()
 }
 
 const db = app.firestore()
-const auth = firebase.auth()
+const auth = app.auth()
 
 export { db, auth }

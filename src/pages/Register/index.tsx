@@ -4,7 +4,7 @@ import React, { useCallback, useLayoutEffect, useState } from 'react'
 import { Platform } from 'react-native'
 import { Input } from 'react-native-elements'
 import { placeholderImg } from '../../data'
-import { auth } from '../../secrets'
+import { auth, db } from '../../secrets'
 
 import * as S from './styles'
 
