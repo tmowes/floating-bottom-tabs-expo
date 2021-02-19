@@ -13,5 +13,9 @@ export { default as InstaLanding } from './Instagram/Auth/InstaLanding'
 export { default as InstaLogin } from './Instagram/Auth/InstaLogin'
 export { default as InstaRegister } from './Instagram/Auth/InstaRegister'
 
-// ### Private Routes ###
+// ### Private Tabs Routes ###
 export { default as InstaHomeFeed } from './Instagram/Private/InstaHomeFeed'
+export { default as InstaAdd } from './Instagram/Private/InstaAdd'
+export { default as InstaSave } from './Instagram/Private/InstaSave'
+export { default as InstaProfile } from './Instagram/Private/InstaProfile'
+export { default as InstaEmpty } from './Instagram/Private/InstaEmpty'

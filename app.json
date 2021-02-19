@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Crypto Expo beta2",
-    "slug": "crypto-expo-beta2",
+    "name": "instaClone beta 1",
+    "slug": "instaclone-beta-1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -29,6 +29,9 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "",
+    "experiments": {
+      "turboModules": true
+    }
   }
 }

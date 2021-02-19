@@ -3,6 +3,7 @@ import React from 'react'
 import { StatusBar } from 'react-native'
 import { useTheme } from 'styled-components/native'
 import * as P from '../pages'
+import InstaPrivateTabsRoutes from './insta.private.tabs.routes'
 
 const { Navigator, Screen } = createStackNavigator()
 
@@ -10,6 +11,7 @@ const InstaPrivateRoutes: React.FC = () => {
   const {
     colors: { backgroundColor },
   } = useTheme()
+
   return (
     <>
       <StatusBar
@@ -23,7 +25,20 @@ const InstaPrivateRoutes: React.FC = () => {
           cardStyle: { backgroundColor },
         }}
       >
-        <Screen name="InstaHomeFeed" component={P.InstaHomeFeed} />
+        <Screen
+          name="InstaPrivateTabsRoutes"
+          component={InstaPrivateTabsRoutes}
+        />
+        <Screen
+          name="InstaAdd"
+          component={P.InstaAdd}
+          options={{ headerShown: true }}
+        />
+        <Screen
+          name="InstaSave"
+          component={P.InstaSave}
+          options={{ headerShown: true }}
+        />
       </Navigator>
     </>
   )

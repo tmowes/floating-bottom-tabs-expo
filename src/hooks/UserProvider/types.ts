@@ -1,4 +1,7 @@
 import { Dispatch } from 'react'
+import firebase from 'firebase'
+
+export type DocProps = firebase.firestore.DocumentSnapshot<firebase.firestore.DocumentData>
 
 export type ActionsProps = {
   type: 'SET_USER'
@@ -6,6 +9,7 @@ export type ActionsProps = {
 }
 
 export interface UserProps {
+  name?: string
   email: string
   uid: string
 }
@@ -23,12 +27,4 @@ export interface StateProviderProps {
   initialState: StateProps
 }
 
-// export interface StateContextData {
-//   state: StateProps
-//   dispatch: Dispatch<ActionsProps>
-// }
-
-// export interface StateContextData {
-//   context: [StateProps, Dispatch<ActionsProps>]
-// }
 export type StateContextData = [StateProps, Dispatch<ActionsProps>]

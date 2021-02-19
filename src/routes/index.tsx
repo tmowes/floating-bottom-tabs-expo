@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, View } from 'react-native'
 import styled, { css, useTheme } from 'styled-components/native'
+import { useStateValue } from '../hooks'
+import { fetchUser } from '../hooks/UserProvider/actions'
+import { SET_USER } from '../hooks/UserProvider/constants'
 import { auth } from '../secrets'
 import InstaPrivateRoutes from './insta.private.routes'
 import InstaPublicRoutes from './insta.public.routes'
@@ -10,29 +13,42 @@ import InstaPublicRoutes from './insta.public.routes'
 // import ChatRoutes from './chat.routes'
 
 const AppWrapper = styled.View`
-  ${({ theme: { colors } }) => css`
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-  `}
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 `
 
 const Routes: React.FC = () => {
   const { colors } = useTheme()
   const [isLoading, setIsLoading] = useState(true)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [, dispatch] = useStateValue()
 
   useEffect(() => {
     auth.onAuthStateChanged(user => {
+      // console.log('authUser', JSON.stringify(user))
+
       if (!user) {
         setIsLoggedIn(false)
         setIsLoading(false)
+        dispatch({
+          type: SET_USER,
+          currentUser: null,
+        })
       } else {
         setIsLoggedIn(true)
         setIsLoading(false)
+        dispatch({
+          type: SET_USER,
+          currentUser: {
+            name: user.displayName,
+            email: user.email,
+            uid: user.uid,
+          },
+        })
       }
     })
-  }, [])
+  }, [dispatch])
 
   if (isLoading) {
     return (

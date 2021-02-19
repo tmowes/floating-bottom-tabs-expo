@@ -1,3 +1,4 @@
+import { fetchUser } from './actions'
 import { SET_USER } from './constants'
 import { ActionsProps, StateProps } from './types'
 

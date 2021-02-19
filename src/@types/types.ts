@@ -1,3 +1,5 @@
+import firebase from 'firebase'
+
 export interface CoinInfoData {
   id: number
   name: string
@@ -178,4 +180,32 @@ export interface StsTokenManager {
   refreshToken: string
   accessToken: string
   expirationTime: number
+}
+
+export interface UploadTaskSnapshot {
+  /**
+   * The number of bytes that have been successfully uploaded so far.
+   */
+  bytesTransferred: number
+  /**
+   * Before the upload completes, contains the metadata sent to the server.
+   * After the upload completes, contains the metadata sent back from the server.
+   */
+  metadata: firebase.storage.FullMetadata
+  /**
+   * The reference that spawned this snapshot's upload task.
+   */
+  ref: firebase.storage.Reference
+  /**
+   * The current state of the task.
+   */
+  state: firebase.storage.TaskState
+  /**
+   * The task of which this is a snapshot.
+   */
+  task: firebase.storage.UploadTask
+  /**
+   * The total number of bytes to be uploaded.
+   */
+  totalBytes: number
 }
