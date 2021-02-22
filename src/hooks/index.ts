@@ -1,5 +1,3 @@
-import { useLoading } from './loading'
-import { useStateValue } from './UserProvider'
-
-export { useLoading }
-export { useStateValue }
+export { useLoading } from './loading'
+export { useStateValue } from './UserProvider'
+export { useShop } from './ShopProvider'

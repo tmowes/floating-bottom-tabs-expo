@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, View } from 'react-native'
 import styled, { css, useTheme } from 'styled-components/native'
 import { useStateValue } from '../hooks'
-import { fetchUser } from '../hooks/UserProvider/actions'
-import { SET_USER } from '../hooks/UserProvider/constants'
+import { fetchUser, fetchUserPosts } from '../hooks/UserProvider/actions'
+import { GET_USER_POSTS, SET_USER } from '../hooks/UserProvider/constants'
 import { auth } from '../secrets'
 import InstaPrivateRoutes from './insta.private.routes'
 import InstaPublicRoutes from './insta.public.routes'
@@ -26,8 +26,6 @@ const Routes: React.FC = () => {
 
   useEffect(() => {
     auth.onAuthStateChanged(user => {
-      // console.log('authUser', JSON.stringify(user))
-
       if (!user) {
         setIsLoggedIn(false)
         setIsLoading(false)
@@ -38,14 +36,8 @@ const Routes: React.FC = () => {
       } else {
         setIsLoggedIn(true)
         setIsLoading(false)
-        dispatch({
-          type: SET_USER,
-          currentUser: {
-            name: user.displayName,
-            email: user.email,
-            uid: user.uid,
-          },
-        })
+        fetchUser()
+        fetchUserPosts()
       }
     })
   }, [dispatch])

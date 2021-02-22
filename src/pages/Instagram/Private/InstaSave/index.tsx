@@ -6,13 +6,21 @@ import {
 } from '@react-navigation/native'
 import firebase from 'firebase'
 import React, { useCallback, useState } from 'react'
+import { ActivityIndicator } from 'react-native'
 import { Input } from 'react-native-elements'
-import { UploadTaskSnapshot } from '../../../../@types/types'
+import { useTheme } from 'styled-components/native'
+import {
+  FirebaseStorageError,
+  UploadTaskSnapshot,
+} from '../../../../@types/types'
+import { useLoading } from '../../../../hooks'
 import { auth, db, storage } from '../../../../secrets'
 import * as S from './styles'
 import { InstaSaveParams } from './types'
 
 const InstaSave = () => {
+  const { loading, setLoading } = useLoading()
+  const { colors } = useTheme()
   const { dispatch } = useNavigation()
   const {
     params: { image },
@@ -37,7 +45,9 @@ const InstaSave = () => {
   )
 
   const uploadImage = useCallback(async () => {
-    console.log('uploadImage')
+    console.log('uploadingImage')
+    setLoading(true)
+
     const response = await fetch(image)
     const blob = await response.blob()
     const task = storage
@@ -60,12 +70,13 @@ const InstaSave = () => {
       })
     }
 
-    const taskError = snapshot => {
-      console.log(snapshot)
+    const taskError = (snapshot: FirebaseStorageError) => {
+      console.log(snapshot.message)
     }
 
     task.on('state_changed', taskProgress, taskError, taskCompleted)
-  }, [image, savePostData])
+    setLoading(false)
+  }, [image, savePostData, setLoading])
 
   return (
     <S.Container>
@@ -78,6 +89,7 @@ const InstaSave = () => {
       />
       <S.Button onPress={uploadImage}>
         <S.Text>Upload</S.Text>
+        {loading && <ActivityIndicator size="small" color={colors.orange} />}
       </S.Button>
     </S.Container>
   )
